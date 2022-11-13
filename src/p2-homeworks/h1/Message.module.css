@@ -1,3 +1,61 @@
 .message {
+    background-color: greenyellow;
+    display: flex;
+    align-items: flex-end;
+    max-width: 300px;
+}
 
+.avatarImg {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 100%;
+    border: 1px solid black;
+    margin-left: 10px;
+}
+
+.textInfoAndTime {
+    margin-left: 10px;
+    background-color: black;
+    width: 100%;
+    border-radius: 10px 10px 10px 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+    box-shadow: 0px 1px 0px rgba(29, 33, 38, 0.1);
+    position: relative;
+}
+
+.textInfoAndTime:before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    left: -10px;
+    bottom: 0px;
+    box-shadow: 0px 1px 0px rgba(29, 33, 38, 0.1);
+    border: 10px solid transparent;
+    border-bottom: 10px solid black;
+    border-right: 10px solid black;
+    border-width: 12px 0px 10px 12px;
+}
+
+.textInfo {
+    color: white;
+}
+
+.textInfoTitle {
+    color: mediumpurple;
+    font-weight: 500;
+
+}
+
+.textInfoMessage {
+    color: white;
+}
+
+.textInfoTime {
+    color: gray;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: -10px;
+    margin-bottom: 5px;
 }
