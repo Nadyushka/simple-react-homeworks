@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
-import any = jasmine.any;
+// import any = jasmine.any;
 
 // types
 export type AffairPriorityType = 'high' | 'middle' | 'low'  // need to fix any
 export type AffairType = {
     _id: number
     name: string
-    priority: AffairPriorityType
+    priority: string
 } // need to fix any
 export type FilterType = 'all' | AffairPriorityType
 
@@ -21,20 +21,27 @@ const defaultAffairs: Array<AffairType> = [ // need to fix any
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: any, filter: any): any => { // need to fix any
-    if (filter === 'all') return affairs
-    else return // need to fix
-}
-export const deleteAffair = (affairs: any, _id: any): any => { // need to fix any
-    return // need to fix
+export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): any => { // need to fix any
+    if (filter === 'all') {
+        return affairs
+    } else {
+        return affairs.filter(affair => affair.priority === filter)
+    }
+
+}// need to fix
+
+export const deleteAffair = (affairs: Array<AffairType>, _id: number): any => { // need to fix any
+    return affairs.filter(affair => affair._id !== _id)
+
+    // need to fix
 }
 
 function HW2() {
-    const [affairs, setAffairs] = useState<any>(defaultAffairs) // need to fix any
+    const [affairs, setAffairs] = useState<Array<AffairType>>(defaultAffairs) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: any) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
+    const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
 
     return (
         <div>

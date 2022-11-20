@@ -11,7 +11,7 @@ type MessagePropsType = {
 function Message(props: MessagePropsType) {
     return (
         <div className={s.message}>
-            <img src={props.avatar} alt='no photo' className={s.avatarImg}/>
+            <img src={props.avatar} alt='' className={s.avatarImg}/>
             <div className={s.textInfoAndTime}>
                 <div className={s.textInfo}>
                     <div className={s.textInfoTitle}>{props.name}</div>
