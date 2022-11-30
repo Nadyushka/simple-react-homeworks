@@ -9,14 +9,11 @@ function HW4() {
     const error = text ? '' : 'error'
 
     const showAlert = () => {
-        if (error) {
-            alert('введите текст...')
-        } else {
-            alert(text) // если нет ошибки показать текст
-        }
-    }
+        error ? alert('введите текст...') : alert(text);
+      }
 
     const [checked, setChecked] = useState<boolean>(false)
+
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
 
     return (
@@ -30,7 +27,7 @@ function HW4() {
                     onChangeText={setText}
                     onEnter={showAlert}
                     error={error}
-                    // spanClassName={s.testSpanError}
+                    spanClassName={s.testSpanError}
                 />
 
                 <SuperInputText
@@ -76,5 +73,6 @@ function HW4() {
         </div>
     )
 }
+
 
 export default HW4
