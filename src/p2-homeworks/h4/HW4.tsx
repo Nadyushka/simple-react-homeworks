@@ -9,10 +9,15 @@ function HW4() {
     const error = text ? '' : 'error'
 
     const showAlert = () => {
-        if (error) {
+        error ? alert('введите текст...') : alert(text);
+
+        {/* if (error) {
             alert('введите текст...')
         } else {
-            alert(text) // если нет ошибки показать текст
+            alert(text)  // если нет ошибки показать текст
+        }
+    }
+        */
         }
     }
 
@@ -30,7 +35,7 @@ function HW4() {
                     onChangeText={setText}
                     onEnter={showAlert}
                     error={error}
-                    // spanClassName={s.testSpanError}
+                    spanClassName={s.testSpanError}
                 />
 
                 <SuperInputText
@@ -76,5 +81,6 @@ function HW4() {
         </div>
     )
 }
+
 
 export default HW4
