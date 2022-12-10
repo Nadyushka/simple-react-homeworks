@@ -10,11 +10,11 @@ function HW4() {
 
     const showAlert = () => {
         error ? alert('введите текст...') : alert(text);
-      }
+    }
 
     const [checked, setChecked] = useState<boolean>(false)
 
-    const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
+    const onChangeChecked = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
 
     return (
         <div>
@@ -61,7 +61,11 @@ function HW4() {
                 </SuperCheckbox>
 
                 {/*// onChange тоже должен работать*/}
-                <SuperCheckbox checked={checked} onChange={testOnChange}/>
+                <SuperCheckbox
+                    checked={checked}
+                    onChangeChecked={setChecked}
+                    onChange={(e) => setChecked(e.currentTarget.checked)}
+                />
             </div>
 
             <hr/>
